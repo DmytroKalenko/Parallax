@@ -47,25 +47,25 @@ window.onload = function() {
 
 
         //parallax on scroll 
-        let thresholdSet = [];
-        for (let i = 0; i <= 1.0; i += 0.005) {
-            thresholdSet.push(i);
-        };
-        const callback = function(entries, observer) {
-            const scrollTopProcent = window.pageXOffset / parallax.offsetHeight * 100;
-            Animation2(scrollTopProcent);
-        };
-        const observer = new IntersectionObserver(callback, {
-            threshold: thresholdSet
-        });
+        // let thresholdSet = [];
+        // for (let i = 0; i <= 1.0; i += 0.005) {
+        //     thresholdSet.push(i);
+        // };
+        // const callback = function(entries, observer) {
+        //     const scrollTopProcent = window.pageXOffset / parallax.offsetHeight * 100;
+        //     Animation2(scrollTopProcent);
+        // };
+        // const observer = new IntersectionObserver(callback, {
+        //     threshold: thresholdSet
+        // });
 
-        observer.observe(document.querySelector('.content'));
+        // observer.observe(document.querySelector('.content'));
 
-        function Animation2(scrollTopProcent) {
-            clouds.style.cssText = `transform: translate(0%,-${scrollTopProcent/9}%);`;
-            mountains.style.cssText = `transform: translate(0%,-${scrollTopProcent/6}%);`;
-            human.style.cssText = `transform: translate(0%,-${scrollTopProcent/3}%);`;
-        };
+        // function Animation2(scrollTopProcent) {
+        //     clouds.style.cssText = `transform: translate(0%,-${scrollTopProcent/9}%);`;
+        //     mountains.style.cssText = `transform: translate(0%,-${scrollTopProcent/6}%);`;
+        //     human.style.cssText = `transform: translate(0%,-${scrollTopProcent/3}%);`;
+        // };
 
     };
 }
