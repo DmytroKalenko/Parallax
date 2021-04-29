@@ -1,0 +1,117 @@
+@import "vars";
+@import "global";
+@import "fonts";
+.parallax {
+    min-height: 100vh;
+}
+
+.parallax__body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.parallax__container {
+    position: relative;
+    z-index: 2;
+    .lable {
+        color: green;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+    }
+    .title {
+        font-size: 45px;
+        color: white;
+        text-align: center;
+    }
+}
+
+.parallax__images {
+    position: relative;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    z-index: 1;
+    .image__parallax__item {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        .clouds {
+            background-image: url(../images/clouds.jpg);
+            background-position: top;
+            top: 0;
+            background-size: cover;
+        }
+        .mounthains {
+            background-image: url(../images/mountains.png);
+            background-position: top;
+            top: 15%;
+            background-size: cover;
+            z-index: 2;
+        }
+        .human {
+            background-image: url(../images/human.png);
+            background-position: top;
+            top: 45%;
+            background-size: cover;
+            z-index: 3;
+        }
+    }
+    .clouds,
+    .mounthains,
+    .human {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-aspect-ratio: 3/2) {
+    .parallax__images {
+        .image__parallax__item {
+            .human {
+                background-position: 20% top;
+            }
+        }
+    }
+}
+
+.content {
+    pointer-events: none;
+    position: relative;
+    z-index: 2;
+    background-color: black;
+    color: wheat;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        transform: translate(0px, -100%);
+        background: linear-gradient(0deg, #000000c4, transparent);
+    }
+}
+
+.content__container {
+    padding: 40px;
+    .tittle {
+        padding: 10px 0;
+        text-align: center;
+    }
+    .text {
+        text-align: justify;
+    }
+}
